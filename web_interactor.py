@@ -82,5 +82,3 @@ class WebInteractor:
 
         return current_month
 
-
-        

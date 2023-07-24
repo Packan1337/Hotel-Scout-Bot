@@ -71,3 +71,4 @@ class WeekendFinder:
         }
 
         return short_to_full_month_translation.get(month_short)
+
