@@ -20,7 +20,7 @@ class WeekendFinder:
         date = datetime.strptime(date_string, "%Y-%m-%d")
 
         # Format the date
-        formatted_date = date.strftime("%d %b. %Y")
+        formatted_date = date.strftime("%d %b %Y")
 
         # Translate the month name to Swedish
         formatted_date = self.translate_month_to_swedish(formatted_date)
@@ -31,7 +31,7 @@ class WeekendFinder:
         # Dictionary to map English month abbreviations to Swedish
         month_translation = {
             "Jan": "jan.",
-            "Feb": "feb-",
+            "Feb": "feb.",
             "Mar": "mars",
             "Apr": "apr.",
             "May": "maj",
@@ -49,3 +49,25 @@ class WeekendFinder:
                 return formatted_date.replace(eng_month, swe_month)
 
         return formatted_date
+    
+    def convert_date_month_short_to_full(self, date_string):
+        # Split the date string on spaces to isolate the month
+        day, month_short, year = date_string.split(' ')
+
+        # Dictionary to map Swedish short month names to full month names
+        short_to_full_month_translation = {
+            "jan.": "januari",
+            "feb.": "februari",
+            "mars": "mars",
+            "apr.": "april",
+            "maj": "maj",
+            "juni": "juni",
+            "juli": "juli",
+            "aug.": "augusti",
+            "sep.": "september",
+            "okt.": "oktober",
+            "nov.": "november",
+            "dec.": "december"
+        }
+
+        return short_to_full_month_translation.get(month_short)
