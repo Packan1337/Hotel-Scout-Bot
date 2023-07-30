@@ -5,4 +5,6 @@ __pycache__/
 my_logs/
 temporary_files.txt
 tempCodeRunnerFile.py
+settings.json
+.vscode
 ```

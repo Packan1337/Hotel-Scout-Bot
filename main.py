@@ -32,12 +32,17 @@ print("✅ Inputted destination and hit enter")
 web_interactor.click_date_selector()
 print("✅ Clicked Date field-button")
 
+# Convert the dates to the correct format for the website
 full_month_friday_date = weekend_finder.convert_date_month_short_to_full(converted_friday_date)
 full_month_sunday_date = weekend_finder.convert_date_month_short_to_full(converted_sunday_date)
-
 print(f"✅ Converted {converted_friday_date} and {converted_sunday_date} to {full_month_friday_date} and {full_month_sunday_date}")
 
+# Select the correct month
 friday_month_full_name = web_interactor.select_correct_month(full_month_friday_date)
 sunday_month_full_name = web_interactor.select_correct_month(full_month_sunday_date)
-
 print(f"✅ Selected correct month ({friday_month_full_name} and {sunday_month_full_name})")
+
+# Click the correct dates
+web_interactor.click_date(converted_friday_date)
+web_interactor.click_date(converted_sunday_date)
+# print(f"✅ Clicked correct dates ({converted_friday_date} and {converted_sunday_date})")
